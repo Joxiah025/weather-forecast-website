@@ -12,8 +12,8 @@ import { getWeatherFromCoordinates } from "../services/openweather.service";
 import 'react-toastify/dist/ReactToastify.min.css';
 
 const Input = () => {
-  const { data, dispatch } = useContext(DataContext);
-  const [location, setLocation] = useState(data.city);
+  const {_, dispatch } = useContext(DataContext);
+  const [location, setLocation] = useState(null);
   const locationcoordinates = useGetLocation();
 
   const notify = (msg) => toast.error(msg);
@@ -37,7 +37,7 @@ const Input = () => {
         .then((res) => {
           dispatch({ type: actions.FETCH_WEATHER, payload: res });
         })
-        .catch((err) => {
+        .catch(_ => {
           notify('Could not get weather information!')
         });
     };
@@ -45,20 +45,21 @@ const Input = () => {
     const locationcity = (loc) => {
       getLocationByCoordinates(loc)
         .then((res) => {
+          const payload = {
+            label: res.results[0].formatted_address,
+            value: {
+              description: res.results[0].formatted_address,
+              place_id: res.results[0].place_id,
+              reference: res.results[0].place_id
+            }
+          };
           dispatch({
             type: actions.FETCH_CITY,
-            payload: {
-              label: res.results[0].formatted_address,
-              value: {
-                description: res.results[0].formatted_address,
-                place_id: res.results[0].place_id,
-                reference: res.results[0].place_id
-              }
-            }
+            payload
           });
-          setLocation(data.city);
+          setLocation(payload);
         })
-        .catch((err) => {
+        .catch(_ => {
           notify('Could not fetch location information!')
         });
     };
@@ -67,7 +68,7 @@ const Input = () => {
       locationweather(loc);
       locationcity(loc);
       dispatch({ type: actions.STOP_LOADER });
-    }).catch(err => {
+    }).catch(_ => {
       notify('Could not get coordinates!')
       dispatch({ type: actions.STOP_LOADER });
     });
@@ -95,7 +96,7 @@ const Input = () => {
           placeholder: "Type to select ...",
           noOptionsMessage: () => 'Search location',
           value: location,
-          //defaultValue: value,
+          // defaultValue: location,
           onSelect: getLocation,
           onChange: getLocation,
           className: 'outline-none md:w-96 dark:bg-gray-800',

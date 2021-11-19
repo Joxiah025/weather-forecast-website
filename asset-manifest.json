@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/weather-forecast-website/static/css/main.e86fcbf5.chunk.css",
+    "main.js": "/weather-forecast-website/static/js/main.b234c34e.chunk.js",
+    "main.js.map": "/weather-forecast-website/static/js/main.b234c34e.chunk.js.map",
+    "runtime-main.js": "/weather-forecast-website/static/js/runtime-main.20ba6fd7.js",
+    "runtime-main.js.map": "/weather-forecast-website/static/js/runtime-main.20ba6fd7.js.map",
+    "static/css/2.b888887b.chunk.css": "/weather-forecast-website/static/css/2.b888887b.chunk.css",
+    "static/js/2.8fff282f.chunk.js": "/weather-forecast-website/static/js/2.8fff282f.chunk.js",
+    "static/js/2.8fff282f.chunk.js.map": "/weather-forecast-website/static/js/2.8fff282f.chunk.js.map",
+    "index.html": "/weather-forecast-website/index.html",
+    "static/css/2.b888887b.chunk.css.map": "/weather-forecast-website/static/css/2.b888887b.chunk.css.map",
+    "static/css/main.e86fcbf5.chunk.css.map": "/weather-forecast-website/static/css/main.e86fcbf5.chunk.css.map",
+    "static/js/2.8fff282f.chunk.js.LICENSE.txt": "/weather-forecast-website/static/js/2.8fff282f.chunk.js.LICENSE.txt",
+    "static/media/styles.css": "/weather-forecast-website/static/media/OpenWeatherIcons.9dd46990.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.20ba6fd7.js",
+    "static/css/2.b888887b.chunk.css",
+    "static/js/2.8fff282f.chunk.js",
+    "static/css/main.e86fcbf5.chunk.css",
+    "static/js/main.b234c34e.chunk.js"
+  ]
+}
